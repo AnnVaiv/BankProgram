@@ -21,10 +21,11 @@ public class Main {
 
 
         System.out.println(personAccounts1.getUserInformation());
-        System.out.println(personAccounts1.calculateBalance());
-        System.out.println(personAccounts2.getUserInformation()+"\n"+personAccounts2.calculateBalance()+"\n");
-        System.out.println(personAccounts3.getUserInformation()+"\n"+personAccounts3.calculateBalance()+"\n");
-        System.out.println(personAccounts4.getUserInformation()+"\n"+personAccounts4.calculateBalance()+"\n");
+        personAccounts1.calculateBalance();
+        //System.out.println(personAccounts1.calculateBalance());
+        //System.out.println(personAccounts2.getUserInformation()+"\n"+personAccounts2.calculateBalance()+"\n");
+        //System.out.println(personAccounts3.getUserInformation()+"\n"+personAccounts3.calculateBalance()+"\n");
+        //System.out.println(personAccounts4.getUserInformation()+"\n"+personAccounts4.calculateBalance()+"\n");
 
 
 

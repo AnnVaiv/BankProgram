@@ -25,7 +25,7 @@ public class PersonAccounts {
                 "\nAccount number: " + accountNumber;
     }
 
-    public String calculateBalance() {
+    public void  calculateBalance() {//ex - public string calculateBalance()
         float balance = this.income - this.outcome;
         if (balance >= 0) {
             System.out.println("Account balance : " + balance);
@@ -34,7 +34,7 @@ public class PersonAccounts {
                     "\nSTOP SPENDING MONEY!!!");
         }
 
-        return "";
+        //return "";
 
 
     }
