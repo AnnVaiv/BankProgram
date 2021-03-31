@@ -6,10 +6,8 @@ import java.util.Scanner;
 
 public class Bank {
     private User user;
-    //int enterAccountNumber =0;
-    //int enterPin=0;
     int checkTime = 1;
-    private double maxCredit=1000d;
+    private double maxCredit = 1000d;
     String toDo = "";
     Scanner input = new Scanner(System.in);
 
@@ -26,9 +24,9 @@ public class Bank {
             System.out.println(user.getUserInformation());
             showMenu();
         } else if (checkTime < 3) {
+            System.out.println("Wrong account number and/or PIN. \nTry again! Your account will be block after " + (3 - checkTime) + " failed attempt to log in.");
             checkTime++;
             checkUser(user);
-            System.out.println("Wrong account number and/or PIN. \nTry again! Your account will be block after "+ (3-checkTime) + "failed attempt to log in.");
         } else {
             System.out.println("Wrong account number and/or PIN. \nAccount blocked!");
         }
@@ -45,34 +43,31 @@ public class Bank {
     }
 
 
-    public double getMaxCredit(){
+    public double getMaxCredit() {
         return this.maxCredit;
     }
-    public void setMaxCredit(double maxCredit){
-        this.maxCredit=maxCredit;
+
+    public void setMaxCredit(double maxCredit) {
+        this.maxCredit = maxCredit;
     }
 
 
     public String getCredit() {
         double amountC;
-        //double maxCredit=1000d;
 
-        //return "Credit";
-        System.out.println("Insert wanted credit amount (max "+maxCredit+" EUR):");
+        System.out.println("Insert wanted credit amount (max " + maxCredit + " EUR):");
         Scanner input = new Scanner(System.in);
         amountC = input.nextDouble();
 
-        if (maxCredit-amountC<=1000 && maxCredit-amountC>=0 && amountC>=0) {
+        if (maxCredit - amountC <= 1000 && maxCredit - amountC >= 0 && amountC >= 0) {
             double newBalance = user.getBalance() + amountC;
             this.user.setBalance(newBalance);
             getMaxCredit();
             double newTestCredit = getMaxCredit() - amountC;
             this.setMaxCredit(newTestCredit);
-            //this.testCredit=testCredit-amountC;
             return amountC + " added to your balance successfully.";
-            //Bank.setTestCredit(getTestCredit()+amountC);
         } else {
-            if (amountC<0){
+            if (amountC < 0) {
                 return "The JavaBank suggests not to attempt committing bank fraud!";
             }
             return amountC + " You are not qualified to received this credit.";
@@ -81,24 +76,20 @@ public class Bank {
 
     public String getDebit() {
         double amountD = 0d;
-        //getBalance();
-        //return "Debit";
-        System.out.println("Insert wanted debit amount (max "+user.getBalance()+" EUR):");
+        System.out.println("Insert wanted debit amount (max " + user.getBalance() + " EUR):");
         Scanner input = new Scanner(System.in);
         amountD = input.nextDouble();
 
-        if (user.getBalance() - amountD >= 0 && amountD>=0) {
+        if (user.getBalance() - amountD >= 0 && amountD >= 0) {
             double newBalance = user.getBalance() - amountD;
             this.user.setBalance(newBalance);
             return amountD + " taken from your balance successfully.";
         } else {
-            if (amountD<0){
+            if (amountD < 0) {
                 return "The JavaBank suggests not to attempt committing bank fraud!";
-            }
-            else
+            } else
                 return amountD + " You cant afford it.";
 
-            //double newBalance = user.getBalance();
         }
     }
 

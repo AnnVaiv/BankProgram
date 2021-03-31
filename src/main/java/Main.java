@@ -7,9 +7,7 @@ public class Main {
         Bank bank = new Bank();
 
 
-
         bank.checkUser(user);
-
 
 
     }

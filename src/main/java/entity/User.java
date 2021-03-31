@@ -18,26 +18,17 @@ public class User {
 
     public String getUserInformation() {
         return "Welcome to JavaBank!" +
-               "\nUser: " + name + " " + surname +
-               "\nAccount number: " + accountNumber;
+                "\nUser: " + name + " " + surname +
+                "\nAccount number: " + accountNumber;
     }
+
     public double getBalance() {
         return balance;
     }
+
     public void setBalance(double balance) {
         this.balance = balance;
     }
-
-    /*public void  calculateBalance() {//ex - public string calculateBalance()
-        double balance = this.startBalance;
-        if (balance >= 0) {
-            System.out.println("Account balance : " + balance);
-            }else{
-            System.out.println("Account balance : " + balance+
-                    "\nSTOP SPENDING MONEY!!!");
-        }
-
-        //return "";*/
 
 
 }
